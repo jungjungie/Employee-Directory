@@ -2,7 +2,7 @@
     {
         "id": 1,
         "name": "Alvin Shaw",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/50",
         "phone": "123-456-7890",
         "email": "alvin@email.com",
         "DOB": "01/01/1990"
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "name": "Sally Hunt",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/50",
         "phone": "098-765-4321",
         "email": "sally@email.com",
         "DOB": "06/22/1983"
@@ -18,7 +18,7 @@
     {
         "id": 3,
         "name": "Bob Tucker",
-        "image": "https://via.placeholder.com/150",
+        "image": "https://via.placeholder.com/50",
         "phone": "435-968-4837",
         "email": "bob@email.com",
         "DOB": "11/06/1986"
