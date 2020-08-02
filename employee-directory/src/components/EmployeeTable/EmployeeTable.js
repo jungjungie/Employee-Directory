@@ -5,7 +5,7 @@ import tempData from "../../temp.json";
 export default function EmployeeTable(props) {
     return (
         <>
-            <div className="row">
+            <main className="row">
                 <div className="col s1"></div>
                 <table className="striped col s12 m10">
                     <thead>
@@ -22,7 +22,7 @@ export default function EmployeeTable(props) {
                     </tbody>
                 </table>
                 <div className="col s1"></div>
-            </div>
+            </main>
         </>
     )
 }
