@@ -8,14 +8,18 @@ export default function EmployeeTable(props) {
             <div className="row">
                 <div className="col s1"></div>
                 <table className="striped col s12 m10">
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>DOB</th>
-                    </tr>
-                    {tempData.map(person => <TableRows image={person.image} name={person.name} phone={person.phone} email={person.email} DOB={person.DOB} />)}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>DOB</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tempData.map(person => <TableRows image={person.image} name={person.name} phone={person.phone} email={person.email} DOB={person.DOB} />)}
+                    </tbody>
                 </table>
                 <div className="col s1"></div>
             </div>
