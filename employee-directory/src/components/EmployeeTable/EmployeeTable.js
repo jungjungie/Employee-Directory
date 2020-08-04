@@ -8,7 +8,7 @@ export default function EmployeeTable(props) {
                 <thead>
                     <tr>
                         <th></th>
-                        <th onClick>Name</th>
+                        <th onClick={props.sortByName}>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>DOB</th>

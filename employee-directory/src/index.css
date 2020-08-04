@@ -13,8 +13,16 @@ body {
 h1 {
   font-family: 'Duru Sans', sans-serif;
   font-weight: 700;
-  color: #66fcf1;
+  /* color: #66fcf1; */
   padding: 40px 0px 0px 0px;
+}
+
+#title-1 {
+  color: #fff44f;
+}
+
+#title-2 {
+  color: #fff44f;
 }
 
 .instructions {
@@ -34,6 +42,8 @@ main {
 }
 
 thead {
-  border-top: 3px solid #66fcf1;
-  border-bottom: 3px solid #66fcf1;
+  /* border-top: 3px solid #66fcf1; */
+  /* border-bottom: 3px solid #66fcf1; */
+  border-top: 3px solid #00dbff;
+  border-bottom: 3px solid #00dbff;
 }
