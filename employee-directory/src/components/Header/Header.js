@@ -6,7 +6,7 @@ export default function Header() {
             <h1 className="center">EMPLOYEE DIRECTORY</h1>
             <div className="instructions">
                 <p className="center">Welcome to the employee directory!</p> 
-                <p className="center">You can search by name or phone number, or filter by column.</p>
+                <p className="center">Search by name or phone number, or filter by column.</p>
             </div>
         </header>
     )
