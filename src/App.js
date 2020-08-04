@@ -78,8 +78,8 @@ function App() {
 	// General sort function that gets called by different sortByField functions
 	const sort = (field, sortVar, setVar) => {
 		let sortedField = employees.filtered.sort((a, b) => {
-			const itemA = "a." + field;
-			const itemB = "b." + field;
+			const itemA = `a.${field}`;
+			const itemB = `b.${field}`;
 
 			let comparison = 0;
 			if (itemA > itemB) {
