@@ -14,6 +14,9 @@ function App() {
 	const [sortName, setName] = useState("");
 	const loaded = false;
 
+	// Dependencies
+	let moment = require("moment");
+
 	// Generates employees upon first page load
 	useEffect(() => {
 		generateEmployees();
@@ -29,7 +32,7 @@ function App() {
 				name: `${employee.name.first} ${employee.name.last}`,
 				phone: employee.phone,
 				email: employee.email,
-				DOB: employee.dob.date,
+				DOB: moment(employee.dob.date).format('MMMM DD'),
 				image: employee.picture.thumbnail
 			}
 		})
