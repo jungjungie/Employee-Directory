@@ -9,9 +9,9 @@ export default function EmployeeTable(props) {
                     <tr>
                         <th></th>
                         <th onClick={props.sortByName}>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>DOB</th>
+                        <th onClick={props.sortByPhone}>Phone</th>
+                        <th onClick={props.sortByEmail}>Email</th>
+                        <th onClick={props.sortByDOB}>DOB</th>
                     </tr>
                 </thead>
                 <tbody>

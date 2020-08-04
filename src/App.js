@@ -3,7 +3,6 @@ import Header from './components/Header/Header';
 import SearchBar from './components/SearchBar/SearchBar';
 import EmployeeTable from './components/EmployeeTable/EmployeeTable';
 import TableRows from "./components/TableRows/TableRows";
-// import tempData from "../src/temp.json";
 import API from "./utils/API";
 import './index.css';
 
@@ -12,6 +11,9 @@ function App() {
 	// Setting up Hooks
 	const [employees, setEmployees] = useState({ original: [], filtered: [] });
 	const [sortName, setName] = useState("");
+	const [sortPhone, setPhone] = useState("");
+	const [sortEmail, setEmail] = useState("");
+	const [sortDOB, setDOB] = useState("");
 	const loaded = false;
 
 	// Dependencies
@@ -32,7 +34,7 @@ function App() {
 				name: `${employee.name.first} ${employee.name.last}`,
 				phone: employee.phone,
 				email: employee.email,
-				DOB: moment(employee.dob.date).format('MMMM DD'),
+				DOB: moment(employee.dob.date).format('MM / DD'),
 				image: employee.picture.thumbnail
 			}
 		})
@@ -73,11 +75,93 @@ function App() {
 		setEmployees({ ...employees, sortedNames });
 	}
 
+	// General sort function that gets called by different sortByField functions
+	const sort = (field, sortVar, setVar) => {
+		let sortedField = employees.filtered.sort((a, b) => {
+			const itemA = "a." + field;
+			const itemB = "b." + field;
+
+			let comparison = 0;
+			if (itemA > itemB) {
+				comparison = 1;
+			} else if (itemA < itemB) {
+				comparison = -1;
+			}
+			return comparison;
+		})
+
+		// Switches between sorting phone #s by ascending and descending order
+		if (sortVar === "DESC") {
+			sortedField.reverse();
+			setVar("ASC");
+		} else {
+			setVar("DESC");
+		}
+
+		setEmployees({ ...employees, sortedField });
+	}
+	
+	// Sorts employees by phone # when the phone column is clicked
+	const sortByPhone = () => {
+		sort("phone", sortPhone, setPhone);
+	}
+
+	const sortByEmail = () => {
+		let sortedEmail = employees.filtered.sort((a, b) => {
+			const emailA = a.email;
+			const emailB = b.email;
+
+			let comparison = 0;
+			if (emailA > emailB) {
+				comparison = 1;
+			} else if (emailA < emailB) {
+				comparison = -1;
+			}
+			return comparison;
+		})
+
+		// Switches between sorting phone #s by ascending and descending order
+		if (sortEmail === "DESC") {
+			sortedEmail.reverse();
+			setEmail("ASC");
+		} else {
+			setEmail("DESC");
+		}
+
+		setEmployees({ ...employees, sortedEmail });
+	}
+
+	// Sorts employees by DOB when the DOB column is clicked
+	const sortByDOB = () => {
+		let sortedDOB = employees.filtered.sort((a, b) => {
+			const dobA = a.DOB;
+			const dobB = b.DOB;
+
+			let comparison = 0;
+			if (dobA > dobB) {
+				comparison = 1;
+			} else if (dobA < dobB) {
+				comparison = -1;
+			}
+			return comparison;
+		})
+
+		// Switches between sorting DOB by ascending and descending order
+		if (sortDOB === "DESC") {
+			sortedDOB.reverse();
+			setDOB("ASC");
+		} else {
+			setDOB("DESC");
+		}
+
+		setEmployees({ ...employees, sortedDOB });
+	}
+
 	return (
 		<>
 			<Header />
 			<SearchBar filterSearch={filterSearch} />
-			<EmployeeTable sortByName={sortByName}>
+			<EmployeeTable sortByName={sortByName} sortByPhone={sortByPhone} sortByDOB={sortByEmail} sortByEmail={sortByDOB}>
 				{employees.filtered.map(employee =>
 					<TableRows
 						key={employee.key}
