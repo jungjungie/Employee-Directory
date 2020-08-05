@@ -8,13 +8,12 @@ import './index.css';
 
 function App() {
 
-	// Setting up Hooks
+	// Setting up states with Hooks
 	const [employees, setEmployees] = useState({ original: [], filtered: [] });
 	const [sortName, setName] = useState("");
 	const [sortPhone, setPhone] = useState("");
 	const [sortEmail, setEmail] = useState("");
 	const [sortDOB, setDOB] = useState("");
-	// const loaded = false;
 
 	// Dependencies
 	let moment = require("moment");

@@ -13,7 +13,7 @@ body {
 /* Header */
 header {
   margin-top: 0;
-  background: #10c8cd;
+  background: #1bbfc5;
   color: white;
   padding-top: 5px;
   /* top: 0; */
@@ -34,7 +34,7 @@ h1 {
 
 /* SearchBar */
 #searchContainer {
-  background: #10c8cd;
+  background: #1bbfc5;
   display: flex;
   flex-direction: row;
   justify-content: center;
