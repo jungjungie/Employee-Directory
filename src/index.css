@@ -4,29 +4,44 @@
 }
 
 body {
-  background: #1f2833;
-  color: white;
+  background: #eee;
+  color: #1f2833;
   font-family: 'Poppins', sans-serif;
-  
+  /* position: relative; */
+}
+
+/* Header */
+header {
+  margin-top: 0;
+  background: #10c8cd;
+  color: white;
+  padding-top: 5px;
+  /* top: 0; */
 }
 
 h1 {
   font-family: 'Duru Sans', sans-serif;
   font-weight: 700;
-  /* color: #66fcf1; */
   padding: 40px 0px 0px 0px;
-}
-
-#title-1 {
-  color: #fff44f;
-}
-
-#title-2 {
-  color: #fff44f;
+  color: #fcf158;
 }
 
 .instructions {
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+/* SearchBar */
+#searchContainer {
+  background: #10c8cd;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+#searchInput {
+  width: 350px;
 }
 
 .fa {
@@ -37,13 +52,11 @@ input {
   color: white;
 }
 
+/* EmployeeTable */
 main {
   margin-top: 40px;
 }
 
 thead {
-  /* border-top: 3px solid #66fcf1; */
-  /* border-bottom: 3px solid #66fcf1; */
-  border-top: 3px solid #00dbff;
-  border-bottom: 3px solid #00dbff;
+  border-bottom: 3px solid #10c8cd
 }
