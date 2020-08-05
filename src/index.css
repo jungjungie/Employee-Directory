@@ -23,11 +23,13 @@ h1 {
   font-family: 'Duru Sans', sans-serif;
   font-weight: 700;
   padding: 40px 0px 0px 0px;
-  color: #fcf158;
+  /* color: #fcf158; */
+  color: white
 }
 
 .instructions {
   padding-bottom: 20px;
+  color: #1f2833;
 }
 
 /* SearchBar */
@@ -44,7 +46,7 @@ h1 {
   width: 350px;
 }
 
-.fa {
+.fa-search {
   color: white;
 }
 

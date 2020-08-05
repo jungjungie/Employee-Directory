@@ -14,7 +14,7 @@ function App() {
 	const [sortPhone, setPhone] = useState("");
 	const [sortEmail, setEmail] = useState("");
 	const [sortDOB, setDOB] = useState("");
-	const loaded = false;
+	// const loaded = false;
 
 	// Dependencies
 	let moment = require("moment");
@@ -22,7 +22,7 @@ function App() {
 	// Generates employees upon first page load
 	useEffect(() => {
 		generateEmployees();
-	}, [loaded]);
+	}, []);
 
 	// Generates employees from API call and reassigns data to a new object employeeFields
 	const generateEmployees = async () => {
@@ -74,36 +74,31 @@ function App() {
 
 		setEmployees({ ...employees, sortedNames });
 	}
-
-	// General sort function that gets called by different sortByField functions
-	const sort = (field, sortVar, setVar) => {
-		let sortedField = employees.filtered.sort((a, b) => {
-			const itemA = `a.${field}`;
-			const itemB = `b.${field}`;
+	
+	// Sorts employees by phone # when the phone column is clicked
+	const sortByPhone = () => {
+		let sortedPhone = employees.filtered.sort((a, b) => {
+			const phoneA = a.phone;
+			const phoneB = b.phone;
 
 			let comparison = 0;
-			if (itemA > itemB) {
+			if (phoneA > phoneB) {
 				comparison = 1;
-			} else if (itemA < itemB) {
+			} else if (phoneA < phoneB) {
 				comparison = -1;
 			}
 			return comparison;
 		})
 
-		// Switches between sorting phone #s by ascending and descending order
-		if (sortVar === "DESC") {
-			sortedField.reverse();
-			setVar("ASC");
+		// Switches between sorting names by ascending and descending order
+		if (sortPhone === "DESC") {
+			sortedPhone.reverse();
+			setPhone("ASC");
 		} else {
-			setVar("DESC");
+			setPhone("DESC");
 		}
 
-		setEmployees({ ...employees, sortedField });
-	}
-	
-	// Sorts employees by phone # when the phone column is clicked
-	const sortByPhone = () => {
-		sort("phone", sortPhone, setPhone);
+		setEmployees({ ...employees, sortedPhone });
 	}
 
 	const sortByEmail = () => {

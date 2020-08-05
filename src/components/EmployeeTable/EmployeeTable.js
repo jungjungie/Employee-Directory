@@ -8,10 +8,10 @@ export default function EmployeeTable(props) {
                 <thead>
                     <tr>
                         <th></th>
-                        <th onClick={props.sortByName}>Name</th>
-                        <th onClick={props.sortByPhone}>Phone</th>
-                        <th onClick={props.sortByEmail}>Email</th>
-                        <th onClick={props.sortByDOB}>DOB</th>
+                        <th onClick={props.sortByName}>Name <i className="fa fa-caret-down" aria-hidden="true"></i></th>
+                        <th onClick={props.sortByPhone}>Phone <i className="fa fa-caret-down" aria-hidden="true"></i></th>
+                        <th onClick={props.sortByEmail}>Email <i className="fa fa-caret-down" aria-hidden="true"></i></th>
+                        <th onClick={props.sortByDOB}>DOB <i className="fa fa-caret-down" aria-hidden="true"></i></th>
                     </tr>
                 </thead>
                 <tbody>
